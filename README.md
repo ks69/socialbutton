@@ -19,7 +19,6 @@ Author
 ======
 
 original site
-
 http://itra.jp/jquery_socialbutton_plugin/
 
 original buttons
@@ -44,7 +43,6 @@ add buttons
 
 
 元サイト
-
 http://itra.jp/jquery_socialbutton_plugin/
 
 以下、追加ボタンです。
