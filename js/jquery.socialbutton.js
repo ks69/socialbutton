@@ -172,7 +172,7 @@
  * });
  * 
  *
- * Likedin Button
+ * Linkedin Button
  * https://www.linkedin.com/
  *
  * $('#linkedin').socialbutton('linkedin', {
