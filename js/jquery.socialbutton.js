@@ -339,12 +339,14 @@ $.fn.socialbutton = function(service, options) {
 			button: 'horizontal', // horizontal, vertical, none
 			url: document.URL,
 			media: '',
-			description: ''
+			description: '',
+			color: 'gray' // gray, red, white
 		},
 		linkedin: {
 			counter: 'right', // right, top, none
 			url: document.URL,
-			lang: 'en_US'
+			//lang: 'en_US'
+			lang: 'ja_JP'
 		},
 		pocket: {
 			counter: 'horizontal', // horizontal, vertical, none
@@ -859,6 +861,7 @@ function socialbutton_pinterest(target, options, defaults, index, max_index)
 	var button = options.button || defaults.button;
 	var media = options.media != undefined ? options.media : defaults.media;
 	var description = options.description != undefined ? options.description : defaults.description;
+	var color = options.color || defaults.color;
 
 	url = url_encode_rfc3986(decodeURIComponent(url));
 	media = url_encode_rfc3986(decodeURIComponent(media));
@@ -870,7 +873,7 @@ function socialbutton_pinterest(target, options, defaults, index, max_index)
 		'description': description
 	});
 
-	var tag = '<a href="' + PRTCL + '//pinterest.com/pin/create/button/?' + params + '" class="pin-it-button" count-layout="' + button +'"><img border="0" src="' + PRTCL + '//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>'
+	var tag = '<a href="' + PRTCL + '//jp.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-color="' + color + '" ><img src="' + PRTCL + '//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_' + color + '_20.png" />'
 
 	$(target).html(tag);
 
@@ -885,7 +888,7 @@ function socialbutton_linkedin(target, options, defaults, index, max_index)
 	var counter = options.counter || defaults.counter;
 	var lang = options.lang || defaults.lang;
 
-	url = url_encode_rfc3986(decodeURIComponent(url));
+	url = decodeURIComponent(url);
 
 	var tag = '<script type="IN/Share" data-url="' + url + '" data-counter="' + counter + '"></script>';
 
